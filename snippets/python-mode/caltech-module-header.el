@@ -3,11 +3,10 @@
 # key: file
 # --
 '''
-`(file-name-nondirectory (buffer-file-name))`: `(read-string "File summary: ")`
+`(file-name-nondirectory (buffer-file-name))`: `(read-string "Summary: ")`
 
-This file is part of https://github.com/`(github-repo-owner-and-name)`/.
+Copyright `(nth 5 (decode-time))` by the California Institute of Technology.
 
-Copyright (c) `(format-time-string "%Y")` by the California Institute of Technology.  This code
-is open-source software released under a BSD-type license.  Please see the
-file "LICENSE" for more information.
+Licensed under a BSD-type license. For more information, see the file "LICENSE"
+in the project website at `(github-repo-url)`/.
 '''

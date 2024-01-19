@@ -1,7 +1,8 @@
 # -*- mode: snippet -*-
-# name: file-header
+# name: script-header
 # key: file
 # --
+#!/usr/bin/env bash
 # Summary: `(read-string "Summary: ")`.
 #
 # Copyright `(nth 5 (decode-time))` Michael Hucka.

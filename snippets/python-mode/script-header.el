@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: file-header
+# name: script-header
 # key: file
 # --
 # Summary: `(read-string "Summary: ")`.
