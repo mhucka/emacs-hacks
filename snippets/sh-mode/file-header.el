@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: script-header
+# name: file-header
 # key: file
 # --
 #!/usr/bin/env bash
