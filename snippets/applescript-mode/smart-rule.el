@@ -1,0 +1,49 @@
+# -*- mode: snippet; tab-width: 4 -*-
+# name: smart-rule
+# expand-env: ((yas-indent-line 'fixed))
+# key: file
+# --
+-- ──── Helper functions ──────────────────────────────────────────────────────
+
+-- Log a message in DEVONthink's log and include the name of this script.
+on report(error_text)
+	local script_path
+	tell application "System Events"
+		set script_path to POSIX path of (path to me as alias)
+	end tell
+	tell application id "DNtp"
+		log message script_path info error_text
+	end tell
+	log error_text				-- Useful when running in a debugger.
+end report
+
+-- ──── Main body ─────────────────────────────────────────────────────────────
+
+on act_on_record(rec)
+	tell application id "DNtp"
+		$0
+	end tell
+end act_on_record
+
+-- ──── Interfaces to DEVONthink ──────────────────────────────────────────────
+
+-- Allow execution as part of a Smart Rule.
+on performSmartRule(selected_records)
+	tell application id "DNtp"
+		try
+			repeat with rec in (selected records)
+				my act_on_record(rec)
+			end repeat
+		on error msg number err
+			if the code is not -128 then
+				my report(msg & " (error " & code & ")")
+				display alert "DEVONthink" message msg as warning
+			end if
+		end try
+	end tell
+end performSmartRule
+
+-- Allow execution outside of a Smart Rule (e.g., in a debugger).
+tell application id "DNtp"
+	my performSmartRule(selection as list)
+end tell
