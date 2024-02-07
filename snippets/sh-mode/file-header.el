@@ -3,6 +3,7 @@
 # key: file
 # --
 #!/usr/bin/env bash
+# -*- mode: sh; sh-shell: bash -*-
 # Summary: `(read-string "Summary: ")`.
 #
 # Copyright `(nth 5 (decode-time))` Michael Hucka.

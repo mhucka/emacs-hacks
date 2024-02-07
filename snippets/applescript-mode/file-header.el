@@ -1,4 +1,4 @@
-# -*- mode: snippet -*-
+# -*- mode: snippet; tab-width: 4 -*-
 # name: file-header
 # key: file
 # --

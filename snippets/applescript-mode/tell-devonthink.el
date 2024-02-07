@@ -1,11 +1,8 @@
-# -*- mode: snippet -*-
+# -*- mode: snippet; tab-width: 4 -*-
 # name: tell-devonthink
 # expand-env: ((yas-indent-line 'fixed))
 # key: file
 # --
-use AppleScript version "2.4" -- Yosemite (10.10) or later
-use scripting additions
-
 tell application id "DNtp"
 	try
 		repeat with rec in (selected records)
