@@ -3,9 +3,9 @@
 # expand-env: ((yas-indent-line 'fixed))
 # key: file
 # --
--- ──── Helper functions ──────────────────────────────────────────────────────
+# ~~~~ Helper functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--- Log a message in DEVONthink's log and include the name of this script.
+# Log a message in DEVONthink's log and include the path to this script.
 on report(error_text)
 	local script_path
 	tell application "System Events"
@@ -14,10 +14,10 @@ on report(error_text)
 	tell application id "DNtp"
 		log message script_path info error_text
 	end tell
-	log error_text				-- Useful when running in a debugger.
+	log error_text				        # Useful when running in a debugger.
 end report
 
--- ──── Main body ─────────────────────────────────────────────────────────────
+# ~~~~ Main body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 on act_on_record(rec)
 	tell application id "DNtp"
@@ -25,9 +25,9 @@ on act_on_record(rec)
 	end tell
 end act_on_record
 
--- ──── Interfaces to DEVONthink ──────────────────────────────────────────────
+# ~~~~ Interfaces to DEVONthink ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--- Allow execution as part of a Smart Rule.
+# Allow execution as part of a Smart Rule.
 on performSmartRule(selected_records)
 	tell application id "DNtp"
 		try
@@ -35,15 +35,15 @@ on performSmartRule(selected_records)
 				my act_on_record(rec)
 			end repeat
 		on error msg number err
-			if the code is not -128 then
-				my report(msg & " (error " & code & ")")
+			if the err is not -128 then     # (Code -128 means user cancelled.)
+				my report(msg & " (error " & err & ")")
 				display alert "DEVONthink" message msg as warning
 			end if
 		end try
 	end tell
 end performSmartRule
 
--- Allow execution outside of a Smart Rule (e.g., in a debugger).
+# Allow execution outside of a Smart Rule (e.g., in a debugger).
 tell application id "DNtp"
 	my performSmartRule(selection as list)
 end tell
