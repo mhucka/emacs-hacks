@@ -1,0 +1,15 @@
+# -*- mode: snippet; tab-width: 4 -*-
+# name: repeat-records
+# expand-env: ((yas-indent-line 'fixed))
+# key: file
+# --
+tell application id "DNtp"
+	try
+		repeat with rec in (selected records)
+			$0
+		end repeat
+	on error msg number err
+		if err is not -128 then ¬
+			display alert "DEVONthink" message msg as warning
+	end try
+end tell
