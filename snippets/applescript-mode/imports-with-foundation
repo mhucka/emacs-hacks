@@ -1,0 +1,8 @@
+# -*- mode: snippet; tab-width: 4 -*-
+# name: imports-with-foundation
+# expand-env: ((yas-indent-line 'fixed))
+# key: file
+# --
+use AppleScript version "2.5"
+use framework "Foundation"
+use scripting additions
