@@ -2,7 +2,7 @@
 # name: if
 # --
 if $1 then
-$2
+	$0
 else
-$0
+
 end if
