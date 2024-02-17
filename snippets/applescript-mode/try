@@ -3,6 +3,6 @@
 # --
 try
 $1
-on error $2
+on error err_msg number err_code
 $0
 end try
