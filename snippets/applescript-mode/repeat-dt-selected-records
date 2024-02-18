@@ -1,5 +1,5 @@
 # -*- mode: snippet; tab-width: 4 -*-
-# name: repeat-records
+# name: repeat-dt-selected-records
 # expand-env: ((yas-indent-line 'fixed))
 # key: file
 # --
