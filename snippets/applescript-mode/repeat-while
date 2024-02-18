@@ -2,5 +2,5 @@
 # name: repeat-while
 # --
 repeat while $1
-$0
+	$0
 end repeat

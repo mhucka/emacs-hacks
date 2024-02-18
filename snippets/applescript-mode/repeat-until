@@ -2,5 +2,5 @@
 # name: repeat-until
 # --
 repeat until $1
-$0
+	$0
 end repeat
