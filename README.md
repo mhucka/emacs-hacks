@@ -18,7 +18,7 @@ Various bits and bobs related to my use of [Emacs](https://www.gnu.org/software/
 ## Introduction
 
 
-This is a collection of things that I use with [Emacs](https://www.gnu.org/software/emacs/). You are welcome to copy and use anything you find interesting.  If you discover problems or can think of improvements, please me know, either using GitHub's commenting system, or a pull request, or directly via email ([mhucka@caltech.edu](mhucka@caltech.edu)).  These scripts are distributed under an MIT license.
+This is a collection of things that I use with [Emacs](https://www.gnu.org/software/emacs/). You are welcome to copy and use anything you find interesting. If you discover problems or can think of improvements, please me know, either using GitHub's commenting system, or a pull request, or directly via email ([mhucka@caltech.edu](mhucka@caltech.edu)). These scripts are distributed under an MIT license.
 
 
 ## Known issues and limitations
@@ -38,4 +38,4 @@ Your help and participation in enhancing this software is welcome!  Please visit
 
 ## License
 
-This software is Copyright © 2024 by Michael Hucka.  This software is freely distributed under the terms of the MIT License.  Please see the [LICENSE](LICENSE) file for more information.
+This software is Copyright © 2024 by Michael Hucka. This software is freely distributed under the terms of the MIT License. Please see the [LICENSE](LICENSE) file for more information.
