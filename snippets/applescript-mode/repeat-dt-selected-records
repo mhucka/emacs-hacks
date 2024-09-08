@@ -1,7 +1,6 @@
 # -*- mode: snippet; tab-width: 4 -*-
-# name: repeat-dt-selected-records
 # expand-env: ((yas-indent-line 'fixed))
-# key: file
+# key: repeat-dt-selected-records
 # --
 tell application id "DNtp"
 	try

@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: repeat-until
+# key: repeat-until
 # --
 repeat until $1
 	$0

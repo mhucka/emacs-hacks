@@ -1,6 +1,5 @@
 # -*- mode: snippet; tab-width: 4 -*-
-# name: file-header
-# key: file
+# key: file-header
 # --
 # Summary: `(read-string "File summary: ")`.
 #

@@ -1,6 +1,7 @@
 # -*- mode: snippet; tab-width: 4 -*-
 # expand-env: ((yas-indent-line 'fixed))
-# key: imports
+# key: script
 # --
-use AppleScript version "2.5"
-use scripting additions
+script $1
+	$0
+end script

@@ -1,7 +1,6 @@
 # -*- mode: snippet; tab-width: 4 -*-
-# name: tell-dt
 # expand-env: ((yas-indent-line 'fixed))
-# key: file
+# key: tell-dt
 # --
 tell application id "DNtp"
 	$0

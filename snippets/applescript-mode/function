@@ -1,8 +1,7 @@
 # -*- mode: snippet; tab-width: 4 -*-
-# name: function
 # expand-env: ((yas-indent-line 'fixed))
-# key: file
+# key: function
 # --
-on ${1:text}($2)
+on ${1:name}($2)
 	$0
 end $1
