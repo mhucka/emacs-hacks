@@ -10,10 +10,12 @@
 # Website: https://github.com/mhucka/emacs-hacks
 
 cmd=emacsclient
-if [ -e /Applications/Emacs/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
+if [ -x /Applications/Emacs/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
     cmd=/Applications/Emacs/Emacs.app/Contents/MacOS/bin/emacsclient
-elif [ -e /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
+elif [ -x /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
     cmd=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+elif [ -e /opt/homebrew/bin/emacsclient ]; then
+    cmd=$(readlink -f /opt/homebrew/bin/emacsclient)
 fi
 
 tramp_arg=""
