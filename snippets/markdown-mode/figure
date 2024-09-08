@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: figure
+# --
+<figure>
+<img${2:$(if (not (string-empty-p yas-text)) " class='")}${2:classes}${2:$(if (not (string-empty-p yas-text)) "'")}${3:$(if (not (string-empty-p yas-text)) " width='")}${3:width}${3:$(if (not (string-empty-p yas-text)) "'")} src="${1:`(file-relative-name (read-file-name "Image file: ") (file-name-directory buffer-file-name))`}">
+    <figcaption>$0</figcaption>
+</figure>
