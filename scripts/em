@@ -12,6 +12,8 @@
 cmd=emacsclient
 if [ -e /Applications/Emacs/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
     cmd=/Applications/Emacs/Emacs.app/Contents/MacOS/bin/emacsclient
+elif [ -e /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
+    cmd=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
 fi
 
 tramp_arg=""
