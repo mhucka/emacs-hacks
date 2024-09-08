@@ -1,7 +1,6 @@
 # -*- mode: snippet; tab-width: 4 -*-
-# name: smart-rule
 # expand-env: ((yas-indent-line 'fixed))
-# key: file
+# key: smart-rule
 # --
 # ~~~~ Helper functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -12,9 +11,9 @@ on report(error_text)
 		set script_path to POSIX path of (path to me as alias)
 	end tell
 	tell application id "DNtp"
-		log message script_path info error_text
+		log message script_path info error_text   # DEVONthink's log.
 	end tell
-	log error_text				        # Useful when running in a debugger.
+	log error_text				                  # Debugger & osascript log.
 end report
 
 # ~~~~ Main body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,6 +43,8 @@ on performSmartRule(selected_records)
 end performSmartRule
 
 # Allow execution outside of a Smart Rule (e.g., in a debugger).
-tell application id "DNtp"
-	my performSmartRule(selection as list)
-end tell
+on run
+	tell application id "DNtp"
+		my performSmartRule(selection as list)
+	end tell
+end run

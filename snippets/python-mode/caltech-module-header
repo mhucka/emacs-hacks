@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
-# name: caltech-module-header
-# key: file
+# key: caltech-module-header
 # --
 '''
 `(file-name-nondirectory (buffer-file-name))`: `(read-string "Summary: ")`

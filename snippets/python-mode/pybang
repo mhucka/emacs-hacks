@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
-# name: pybang
-# key: file
+# key: pybang
 # --
 #!/usr/bin/env python3
 

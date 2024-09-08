@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
-# name: caltech-file-header
-# key: file
+# key: caltech-file-header
 # --
 # Summary: `(read-string "Summary: ")`.
 #

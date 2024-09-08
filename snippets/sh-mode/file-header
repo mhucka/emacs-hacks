@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
-# name: file-header
-# key: file
+# key: file-header
 # --
 #!/usr/bin/env bash
 # Summary: `(read-string "Summary: ")`.

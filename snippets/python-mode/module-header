@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
-# name: module-header
-# key: file
+# key: module-header
 # --
 '''
 `(file-name-nondirectory (buffer-file-name))`: `(read-string "Summary: ")`

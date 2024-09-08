@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: repeat-while
+# key: repeat-while
 # --
 repeat while $1
 	$0

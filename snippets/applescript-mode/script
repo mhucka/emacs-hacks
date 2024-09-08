@@ -1,6 +1,6 @@
 # -*- mode: snippet; tab-width: 4 -*-
-# name: script
 # expand-env: ((yas-indent-line 'fixed))
+# key: script
 # --
 script $1
 	$0
