@@ -26,5 +26,6 @@ fi
 $cmd -q \
      $tramp_arg \
      --socket-name=$HOME/.ssh/server \
-     --alternate-editor 'emacs -nw' "$@" \
-    || emacs -nw "$@"
+     --alternate-editor='emacs -nw' \
+     "$@" \
+    || emacs --no-splash -nw "$@"
