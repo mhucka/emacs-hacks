@@ -9,27 +9,29 @@
 # License: MIT License – see file "LICENSE" in the project website.
 # Website: https://github.com/mhucka/emacs-hacks
 
-cmd=emacsclient
+socket_file="$HOME/.ssh/server"
+alt_editor="${ALTERNATE_EDITOR:-emacs -nw}"
+
+eclient=emacsclient
 if [ -x /Applications/Emacs/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
-    cmd=/Applications/Emacs/Emacs.app/Contents/MacOS/bin/emacsclient
+    eclient=/Applications/Emacs/Emacs.app/Contents/MacOS/bin/emacsclient
 elif [ -x /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
-    cmd=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+    eclient=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
 elif [ -e /opt/homebrew/bin/emacsclient ]; then
-    cmd=$(readlink -f /opt/homebrew/bin/emacsclient)
+    eclient=$(readlink -f /opt/homebrew/bin/emacsclient)
 fi
 
-tramp_arg=""
-
-# Not all remote hosts set SSH_CONNECTION. CentOS doesn't, but Ubuntu does.
+tramp=""
 if [[ ${SSH_CONNECTION:+set} ]]; then
     host=$(hostname -f)
+    # Not all remote hosts set SSH_CONNECTION. CentOS doesn't, but Ubuntu does.
     port=$(echo $SSH_CONNECTION | rev | cut -f1 -d' ')
-    tramp_arg="--tramp=/ssh:$host#$port:"
+    tramp="--tramp=/ssh:$host#$port:"
 fi
 
-$cmd -q \
-     $tramp_arg \
-     --socket-name=$HOME/.ssh/server \
-     --alternate-editor='emacs -nw' \
-     "$@" \
-    || emacs --no-splash -nw "$@"
+$eclient -q $tramp --socket-name=${socket_file} --alternate-editor="$alt_editor" "$@"
+(( emacsclient_successful = ! $? ))
+
+if [[ ! $emacsclient_successful ]]; then
+    emacs --no-splash --no-desktop -nw "$@"
+fi
